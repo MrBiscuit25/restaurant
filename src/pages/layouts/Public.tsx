@@ -1,5 +1,5 @@
 const Public = () => {
-  return <div className="bg-indigo-700 grow">Public</div>;
+  return <div className="bg-[#393C49] grow">Public</div>;
 };
 
 export default Public;
