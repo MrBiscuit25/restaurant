@@ -87,6 +87,30 @@ after:shadow-[10px_10px_0_rgb(57,60,73)]`
               <Notifications className="p-3" />
             </NavLink>
           </li>
+          <li className="">
+            <NavLink
+              to="/some"
+              className={({ isActive }) =>
+                isActive
+                  ? "flex justify-center p-3 ml-2 rounded-l-xl bg-[#393C49] relative before:absolute before:w-5  before:h-5 before:right-0 before:-bottom-5 before:bg-[#1F1D2B] before:rounded-full before:shadow-[10px_-10px_0_rgb(57,60,73)] after:absolute after:w-5  after:h-5 after:right-0 after:-top-5 after:bg-[#1F1D2B] after:rounded-full after:shadow-[10px_10px_0_rgb(57,60,73)]"
+                  : "fill-current text-[#EA7C69] flex justify-center p-3 ml-2"
+              }
+            >
+              <Notifications className="p-3" />
+            </NavLink>
+          </li>
+          <li className="">
+            <NavLink
+              to="/some"
+              className={({ isActive }) =>
+                isActive
+                  ? "flex justify-center p-3 ml-2 rounded-l-xl bg-[#393C49] relative before:absolute before:w-5  before:h-5 before:right-0 before:-bottom-5 before:bg-[#1F1D2B] before:rounded-full before:shadow-[10px_-10px_0_rgb(57,60,73)] after:absolute after:w-5  after:h-5 after:right-0 after:-top-5 after:bg-[#1F1D2B] after:rounded-full after:shadow-[10px_10px_0_rgb(57,60,73)]"
+                  : "fill-current text-[#EA7C69] flex justify-center p-3 ml-2"
+              }
+            >
+              <Notifications className="p-3" />
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </aside>
