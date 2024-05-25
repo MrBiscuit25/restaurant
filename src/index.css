@@ -132,7 +132,7 @@ after:shadow-[10px_10px_0_rgb(57,60,73)]
 @apply flex justify-center p-3 ml-2 rounded-l-xl bg-[#393C49] relative before:absolute before:w-5  before:h-5 before:right-0 before:-bottom-5 before:bg-[#1F1D2B] before:rounded-full before:shadow-[10px_-10px_0_rgb(57,60,73)] after:absolute after:w-5  after:h-5 after:right-0 after:-top-5 after:bg-[#1F1D2B] after:rounded-full after:shadow-[10px_10px_0_rgb(57,60,73)]
 }
 
-.withou_curve{
+.without_curve{
 @apply fill-current text-[#EA7C69] flex justify-center p-3 ml-2 hover:curve_hover hover:text-white 
 }
 
@@ -144,5 +144,9 @@ after:shadow-[10px_10px_0_rgb(57,60,73)]
 @apply p-2 group-hover:bg-[#EA7C69] group-hover:rounded-xl group-hover:shadow-[0_4px_11px_0_rgba(234,124,105,0.32)]
 }
 
+.active-dish{
+  @apply text-[#EA7C69] relative before:absolute before:w-[50%] before:h-1 before:bg-[#EA7C69]
+  before:top-[100%]
+}
 
 }

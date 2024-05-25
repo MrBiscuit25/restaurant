@@ -23,7 +23,7 @@ const Nav = () => {
               className={({ isActive }) =>
                 isActive
                   ? "active_curve"
-                  : "withou_curve"
+                  : "without_curve"
               }
             >
               {({ isActive }) => (
@@ -36,7 +36,7 @@ const Nav = () => {
               )}
             </NavLink>
           </li>
-          <li className="">
+          <li className="group">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -57,11 +57,11 @@ const Nav = () => {
           </li>
           <li className="group">
             <NavLink
-              to="/some"
+              to="/dashboard"
               className={({ isActive }) =>
                 isActive
                   ? "active_curve"
-                  : "withou_curve"
+                  : "without_curve"
               }
             >
               {({ isActive }) => (
@@ -80,7 +80,7 @@ const Nav = () => {
               className={({ isActive }) =>
                 isActive
                   ? "active_curve"
-                  : "withou_curve"
+                  : "without_curve"
               }
             >
               {({ isActive }) => (
@@ -99,7 +99,7 @@ const Nav = () => {
               className={({ isActive }) =>
                 isActive
                   ? "active_curve"
-                  : "withou_curve"
+                  : "without_curve"
               }
             >
               {({ isActive }) => (
@@ -118,7 +118,7 @@ const Nav = () => {
               className={({ isActive }) =>
                 isActive
                   ? "active_curve"
-                  : "withou_curve"
+                  : "without_curve"
               }
             >
               {({ isActive }) => (
@@ -133,11 +133,11 @@ const Nav = () => {
           </li>
           <li className="group">
             <NavLink
-              to="/"
+              to="/some"
               className={({ isActive }) =>
                 isActive
                   ? "active_curve"
-                  : "withou_curve"
+                  : "without_curve"
               }
             >
               {({ isActive }) => (
