@@ -105,48 +105,97 @@
 }
 
 
+.takeout__order{
+  min-width: 150px;
+  position: relative;
+}
+.takeout__order:active::before{
+
+}
+.takeout__order-select{
+  --size:0.3rem;
+  -webkit-appearance:none;
+  font-size: 1.15rem;
+  padding: 0.6em 4em 0.6em 2em;
+  background-color: #1f1d2b;
+  border-radius: 0.25rem;
+  cursor:pointer;
+}
+.takeout__order::before{
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: 1rem;
+  border-left: 0.3rem solid transparent;
+  border-right: 0.3rem solid transparent;
+  border-top: 0.3rem solid white;
+
+}
+
+
 
 
 @layer components{
   .curve_hover{
     @apply flex justify-center p-3 ml-2 rounded-l-xl bg-[#393C49]
-relative before:absolute before:w-5  before:h-5 before:right-0 before:-bottom-5
-before:bg-[#1F1D2B] before:rounded-full
-before:shadow-[10px_-10px_0_rgb(57,60,73)] after:absolute after:w-5  after:h-5
-after:right-0 after:-top-5 after:bg-[#1F1D2B] after:rounded-full
-after:shadow-[10px_10px_0_rgb(57,60,73)]
+    relative before:absolute before:w-5  before:h-5 before:right-0 before:-bottom-5
+    before:bg-[#1F1D2B] before:rounded-full
+    before:shadow-[10px_-10px_0_rgb(57,60,73)] after:absolute after:w-5  after:h-5
+    after:right-0 after:-top-5 after:bg-[#1F1D2B] after:rounded-full
+    after:shadow-[10px_10px_0_rgb(57,60,73)]
   }
   .curve_hover_top{
     @apply flex justify-center p-3 ml-2 rounded-l-xl bg-[#393C49]
-relative before:absolute before:w-5  before:h-5 before:right-0 before:-bottom-5
-before:bg-[#1F1D2B] before:rounded-full
-before:shadow-[10px_-10px_0_rgb(57,60,73)]   }
+    relative before:absolute before:w-5  before:h-5 before:right-0 before:-bottom-5
+    before:bg-[#1F1D2B] before:rounded-full
+  before:shadow-[10px_-10px_0_rgb(57,60,73)]   }
   .curve_hover_bottom{
     @apply flex justify-center p-3 ml-2 rounded-l-xl bg-[#393C49]
-relative after:absolute after:w-5  after:h-5
-after:right-0 after:-top-5 after:bg-[#1F1D2B] after:rounded-full
-after:shadow-[10px_10px_0_rgb(57,60,73)]
+    relative after:absolute after:w-5  after:h-5
+    after:right-0 after:-top-5 after:bg-[#1F1D2B] after:rounded-full
+    after:shadow-[10px_10px_0_rgb(57,60,73)]
   }
 
-.active_curve{
-@apply flex justify-center p-3 ml-2 rounded-l-xl bg-[#393C49] relative before:absolute before:w-5  before:h-5 before:right-0 before:-bottom-5 before:bg-[#1F1D2B] before:rounded-full before:shadow-[10px_-10px_0_rgb(57,60,73)] after:absolute after:w-5  after:h-5 after:right-0 after:-top-5 after:bg-[#1F1D2B] after:rounded-full after:shadow-[10px_10px_0_rgb(57,60,73)]
+  .active_curve{
+    @apply flex justify-center p-3 ml-2 rounded-l-xl bg-[#393C49] relative
+    before:absolute before:w-5  before:h-5 before:right-0 before:-bottom-5
+    before:bg-[#1F1D2B] before:rounded-full
+    before:shadow-[10px_-10px_0_rgb(57,60,73)] after:absolute after:w-5
+    after:h-5 after:right-0 after:-top-5 after:bg-[#1F1D2B] after:rounded-full
+    after:shadow-[10px_10px_0_rgb(57,60,73)]
+  }
+
+  .without_curve{
+    @apply fill-current text-[#EA7C69] flex justify-center p-3 ml-2
+    hover:curve_hover hover:text-white 
+  }
+
+  .active_tab{
+    @apply fill-current text-white p-2 rounded-xl bg-[#EA7C69]
+    group-hover:shadow-[0_4px_11px_0_rgba(234,124,105,0.32)]
+  }
+
+  .tab{
+    @apply p-2 group-hover:bg-[#EA7C69] group-hover:rounded-xl
+    group-hover:shadow-[0_4px_11px_0_rgba(234,124,105,0.32)]
+  }
+
+
+  .dish__menu-item{
+    @apply min-h-8 text-lg inline-block relative after:absolute after:top-[100%]
+    after:left-[50%] after:-translate-x-[50%] after:w-0 after:h-[2px]
+    after:bg-[#EA7C69] after:duration-200 hover:after:w-[100%]
+  }
+  .active-dish{
+    @apply text-[#EA7C69] relative after:absolute 
+    after:absolute after:top-[100%]
+    after:left-[50%] after:-translate-x-[50%] after:h-[2px]
+    after:bg-[#EA7C69] after:w-[100%]
+  }
+
+  .dish__card{
+    @apply 
+  }
+
 }
 
-.without_curve{
-@apply fill-current text-[#EA7C69] flex justify-center p-3 ml-2 hover:curve_hover hover:text-white 
-}
-
-.active_tab{
-@apply fill-current text-white p-2 rounded-xl bg-[#EA7C69] group-hover:shadow-[0_4px_11px_0_rgba(234,124,105,0.32)]
-}
-
-.tab{
-@apply p-2 group-hover:bg-[#EA7C69] group-hover:rounded-xl group-hover:shadow-[0_4px_11px_0_rgba(234,124,105,0.32)]
-}
-
-.active-dish{
-  @apply text-[#EA7C69] relative before:absolute before:w-[50%] before:h-1 before:bg-[#EA7C69]
-  before:top-[100%]
-}
-
-}

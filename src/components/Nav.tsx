@@ -19,7 +19,7 @@ const Nav = () => {
           </li>
           <li className="group">
             <NavLink
-              to="/s"
+              to="/home"
               className={({ isActive }) =>
                 isActive
                   ? "active_curve"
@@ -57,7 +57,7 @@ const Nav = () => {
           </li>
           <li className="group">
             <NavLink
-              to="/dashboard"
+              to="/some"
               className={({ isActive }) =>
                 isActive
                   ? "active_curve"
