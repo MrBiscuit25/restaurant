@@ -10,7 +10,7 @@ import { Link, NavLink } from "react-router-dom";
 const Nav = () => {
   return (
     <aside className="bg-[#393C49]">
-      <nav className="bg-[#1F1D2B] rounded-r-2xl">
+      <nav className="bg-[#1F1D2B] rounded-r-2xl sticky top-0">
         <ul className="flex flex-col gap-y-5  min-h-[100vh] [&>*:last-child]:mt-auto [&>*:last-child]:mb-auto">
           <li className="group">
             <NavLink to='/home' className='fill-current text-[#EA7C69] flex justify-center p-3 ml-2'>

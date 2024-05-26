@@ -1,13 +1,14 @@
 import Search from '../assets/search.svg?react'
 import { useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
+import OrderItem from '../components/OrderItem'
 const Home = () => {
   const [searchIsActive, setSearchIsActive] = useState(false)
   return (
-    <div className="grid grid-cols-3 gap-x-[20px] px-[20px] mt-5">
+    <div className="grid grid-cols-3 gap-x-[20px] pl-[20px] ">
       <div className="col-span-2">
         <div className="row mb-5">
-          <div className="flex justify-between mb-4">
+          <div className="flex justify-between mb-4 mt-8">
             <div className="leading-[140%]">
               <div className="text-4xl font-semibold pb-1">East Pearl</div>
               <div className="text-sm text-[#e0e6e9]">Tuesday,2 June 2023</div>
@@ -77,9 +78,9 @@ const Home = () => {
             </nav>
           </div>
         </div>
-        <div className='flex items-center justify-between'>
-          <div className="leading-[140%] text-2xl font-semibold">Choose Dishes</div>
-          <div className="takeout__order">
+        <div className='flex items-start justify-between'>
+          <div className="leading-[140%] text-2xl font-semibold ">Choose Dishes</div>
+          <div className="takeout__order mb-14">
             <select className='takeout__order-select' name="" id="">
               <option value="dine_in">Dine in</option>
               <option value="to_go">To go</option>
@@ -89,7 +90,20 @@ const Home = () => {
         </div>
         <Outlet/>
       </div>
-      <div>2</div>
+      <div className='flex flex-col bg-[#1f1f2b] p-6'>
+        <div>Orders #34562</div>
+        <ul className='flex'>
+          <li><button>Dine in</button></li>
+          <li><button>To Go</button></li>
+          <li><button>Delivery</button></li>
+        </ul>
+        <div className='flex gap-x-10 border-b-[1px] border-[#abbbc2] pb-5 mb-[146px]'>
+          <div>Item</div>
+          <div className='ml-auto'>Qty</div>
+          <div>Price</div>
+        </div>
+        <OrderItem/>
+      </div>
     </div>
   )
 }

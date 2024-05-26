@@ -1,0 +1,68 @@
+[
+  {
+    "id":"1",
+    "name":"Spicy seasonde seafood noodles",
+    "image":"/images/1.svg",
+    "price":"2.29",
+    "availiable":"20"
+  },
+
+  {
+    "id":"2",
+    "name":"Salted Pasta with mushroom sauce",
+    "image":"/images/2.svg",
+    "price":"2.69",
+    "availiable":"11"
+  },
+
+  {
+    "id":"3",
+    "name":"Beef dumpling in hot and sour soup",
+    "image":"/images/3.svg",
+    "price":"2.99",
+    "availiable":"16"
+  },
+  {
+    "id":"4",
+    "name":"Healthy noodle with spinach leaf",
+    "image":"/images/4.svg",
+    "price":"3.29",
+    "availiable":"22"
+  },
+  {
+    "id":"5",
+    "name":"Hot spicy fried rice with omelet",
+    "image":"/images/5.svg",
+    "price":"3.49",
+    "availiable":"13"
+  },
+  {
+    "id":"6",
+    "name":"Spicy instant noodle with special omelette",
+    "image":"/images/6.svg",
+    "price":"2.69",
+    "availiable":"17"
+  },
+  {
+    "id":"7",
+    "name":"Healthy noodle with spinach leaf",
+    "image":"/images/7.svg",
+    "price":"2.69",
+    "availiable":"11"
+  },
+  {
+    "id":"8",
+    "name":"Hot spicy fried rice with omelet",
+    "image":"/images/8.svg",
+    "price":"2.69",
+    "availiable":"11"
+  },
+  {
+    "id":"9",
+    "name":"Spicy instant noodle with special omelette",
+    "image":"/images/9.svg",
+    "price":"2.69",
+    "availiable":"11"
+  }
+
+]
