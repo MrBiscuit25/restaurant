@@ -132,8 +132,11 @@
 
 }
 
-.clip__image{
-  clip-path: circle(50% at 50% 50%);
+.text-shrink{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow:hidden;
 }
 
 
@@ -195,10 +198,5 @@
     after:left-[50%] after:-translate-x-[50%] after:h-[2px]
     after:bg-[#EA7C69] after:w-[100%]
   }
-
-  .dish__card{
-    @apply 
-  }
-
 }
 

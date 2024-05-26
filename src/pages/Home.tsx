@@ -2,6 +2,9 @@ import Search from '../assets/search.svg?react'
 import { useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import OrderItem from '../components/OrderItem'
+
+import orders from '../data/orders.json'
+
 const Home = () => {
   const [searchIsActive, setSearchIsActive] = useState(false)
   return (
@@ -68,8 +71,7 @@ const Home = () => {
                 </li>
                 <li className=''>
                   <NavLink to="/home/dessert" 
-                    className={({isActive}) => [
-                      isActive ? "active-dish" : "",
+                    className={({isActive}) => [ isActive ? "active-dish" : "",
                       "dish__menu-item"
                     ].join(" ")}
                   >Dessert</NavLink>
@@ -90,19 +92,32 @@ const Home = () => {
         </div>
         <Outlet/>
       </div>
-      <div className='flex flex-col bg-[#1f1f2b] p-6'>
+      <div className='flex flex-col bg-[#1f1f2b] p-6 gap-y-6 self-start rounded-b-2xl'>
         <div>Orders #34562</div>
-        <ul className='flex'>
-          <li><button>Dine in</button></li>
-          <li><button>To Go</button></li>
-          <li><button>Delivery</button></li>
+        <ul className='flex gap-x-2 text-sm text-[#EA7C69]'>
+          <li><button className='px-2 py-1 rounded border-[1px] border-[#393c49] hover:bg-[#EA7C69] hover:text-white'>Dine in</button></li>
+          <li><button className='px-2 py-1 rounded border-[1px] border-[#393c49] hover:bg-[#EA7C69] hover:text-white'>To Go</button></li>
+          <li><button className='px-2 py-1 rounded border-[1px] border-[#393c49] hover:bg-[#EA7C69] hover:text-white'>Delivery</button></li>
         </ul>
         <div className='flex gap-x-10 border-b-[1px] border-[#abbbc2] pb-5 mb-[146px]'>
           <div>Item</div>
           <div className='ml-auto'>Qty</div>
           <div>Price</div>
         </div>
-        <OrderItem/>
+        <div className="flex flex-col gap-y-6">
+          {orders.map(order => (
+            <OrderItem key={order.id} price={order.price} name={order.name} image={order.image}/>
+          ))}
+        </div>
+        <div className="flex justify-between">
+          <div className="text-sm text-[#abbbc2]">Discount</div>
+          <div className="i">$0</div>
+        </div>
+        <div className="flex justify-between">
+          <div className="text-sm text-[#abbbc2]">Sub total</div>
+          <div className="i">$21,03</div>
+        </div>
+        <button className="py-3 border-[1px] rounded-xl hover:text-[#fff] hover:border-transparent hover:bg-[#EA7C69] text-[#EA7C69] border-[#EA7C69]">Continue to Payment</button>
       </div>
     </div>
   )

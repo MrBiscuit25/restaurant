@@ -1,0 +1,23 @@
+[
+  {
+    "id":"2",
+    "name":"Salted Pasta with mushroom sauce",
+    "image":"/images/2.svg",
+    "price":"2.69",
+    "availiable":"11"
+  },
+  {
+    "id":"4",
+    "name":"Healthy noodle with spinach leaf",
+    "image":"/images/4.svg",
+    "price":"3.29",
+    "availiable":"22"
+  },
+  {
+    "id":"6",
+    "name":"Spicy instant noodle with special omelette",
+    "image":"/images/6.svg",
+    "price":"2.69",
+    "availiable":"17"
+  }
+]
