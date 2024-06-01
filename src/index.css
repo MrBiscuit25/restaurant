@@ -2,27 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 /* curve */
-.curve{
+.curve {
   display: flex;
   justify-content: center;
   padding: 12px;
   margin-left: 8px;
   border-top-left-radius: 0.75rem; /* 12px */
   border-bottom-left-radius: 0.75rem; /* 12px */
-  background-color: #393C49;
+  background-color: #393c49;
   position: relative;
 }
 
-.curve svg{
+.curve svg {
   color: white;
-  background-color: #EA7C69;
+  background-color: #ea7c69;
   border-radius: 0.75rem;
 }
-.curve::after,.curve::before{
-  content:'';
+.curve::after,
+.curve::before {
+  content: "";
   position: absolute;
   width: 1.25rem;
   height: 1.25rem;
@@ -30,36 +29,35 @@
   border-radius: 99999px;
   background-color: #1f1d2b;
 }
-.curve::after{
+.curve::after {
   bottom: -1.25rem;
-  box-shadow: 10px -10px 0 rgb(57,60,73)
+  box-shadow: 10px -10px 0 rgb(57, 60, 73);
 }
-.curve::before{
+.curve::before {
   top: -1.25rem;
-  box-shadow: 10px 10px 0 rgb(57,60,73)
+  box-shadow: 10px 10px 0 rgb(57, 60, 73);
 }
-
 
 /* curve bottom only */
 
-.curve_bottom{
+.curve_bottom {
   display: flex;
   justify-content: center;
   padding: 12px;
   margin-left: 8px;
   border-top-left-radius: 0.75rem; /* 12px */
   border-bottom-left-radius: 0.75rem; /* 12px */
-  background-color: #393C49;
+  background-color: #393c49;
   position: relative;
 }
 
-.curve_bottom svg{
+.curve_bottom svg {
   color: white;
-  background-color: #EA7C69;
+  background-color: #ea7c69;
   border-radius: 0.75rem;
 }
-.curve_bottom::before{
-  content:'';
+.curve_bottom::before {
+  content: "";
   position: absolute;
   width: 1.25rem;
   height: 1.25rem;
@@ -67,31 +65,30 @@
   border-radius: 99999px;
   background-color: #1f1d2b;
 }
-.curve_bottom::before{
+.curve_bottom::before {
   top: -1.25rem;
-  box-shadow: 10px 10px 0 rgb(57,60,73)
+  box-shadow: 10px 10px 0 rgb(57, 60, 73);
 }
-
 
 /* curve top only */
-.curve_top{
+.curve_top {
   display: flex;
   justify-content: center;
   padding: 12px;
   margin-left: 8px;
   border-top-left-radius: 0.75rem; /* 12px */
   border-bottom-left-radius: 0.75rem; /* 12px */
-  background-color: #393C49;
+  background-color: #393c49;
   position: relative;
 }
 
-.curve_top svg{
+.curve_top svg {
   color: white;
-  background-color: #EA7C69;
+  background-color: #ea7c69;
   border-radius: 0.75rem;
 }
-.curve_top::after{
-  content:'';
+.curve_top::after {
+  content: "";
   position: absolute;
   width: 1.25rem;
   height: 1.25rem;
@@ -99,29 +96,27 @@
   border-radius: 99999px;
   background-color: #1f1d2b;
 }
-.curve_top::after{
+.curve_top::after {
   bottom: -1.25rem;
-  box-shadow: 10px -10px 0 rgb(57,60,73)
+  box-shadow: 10px -10px 0 rgb(57, 60, 73);
 }
 
-
-.takeout__order{
+.takeout__order {
   min-width: 150px;
   position: relative;
 }
-.takeout__order:active::before{
-
+.takeout__order:active::before {
 }
-.takeout__order-select{
-  --size:0.3rem;
-  -webkit-appearance:none;
+.takeout__order-select {
+  --size: 0.3rem;
+  -webkit-appearance: none;
   font-size: 1.15rem;
   padding: 0.6em 4em 0.6em 2em;
   background-color: #1f1d2b;
   border-radius: 0.25rem;
-  cursor:pointer;
+  cursor: pointer;
 }
-.takeout__order::before{
+.takeout__order::before {
   content: "";
   position: absolute;
   top: 45%;
@@ -129,74 +124,91 @@
   border-left: 0.3rem solid transparent;
   border-right: 0.3rem solid transparent;
   border-top: 0.3rem solid white;
-
 }
 
-.text-shrink{
+.text-shrink {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  overflow:hidden;
+  overflow: hidden;
 }
 
+.dish__select {
+  position: relative;
+}
+.dish__select-expand {
+  padding-left: 2rem;
+  -webkit-appearance: none;
+  border: 1px solid #abbbc2;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
 
+.dish__select::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 1rem;
+  border-left: 0.3rem solid transparent;
+  border-right: 0.3rem solid transparent;
+  border-top: 0.3rem solid white;
+}
 
-@layer components{
-  .curve_hover{
+@layer components {
+  .curve_hover {
     @apply flex justify-center p-3 ml-2 rounded-l-xl bg-[#393C49]
     relative before:absolute before:w-5  before:h-5 before:right-0 before:-bottom-5
     before:bg-[#1F1D2B] before:rounded-full
     before:shadow-[10px_-10px_0_rgb(57,60,73)] after:absolute after:w-5  after:h-5
     after:right-0 after:-top-5 after:bg-[#1F1D2B] after:rounded-full
-    after:shadow-[10px_10px_0_rgb(57,60,73)]
+    after:shadow-[10px_10px_0_rgb(57,60,73)];
   }
-  .curve_hover_top{
+  .curve_hover_top {
     @apply flex justify-center p-3 ml-2 rounded-l-xl bg-[#393C49]
     relative before:absolute before:w-5  before:h-5 before:right-0 before:-bottom-5
     before:bg-[#1F1D2B] before:rounded-full
-  before:shadow-[10px_-10px_0_rgb(57,60,73)]   }
-  .curve_hover_bottom{
+  before:shadow-[10px_-10px_0_rgb(57,60,73)];
+  }
+  .curve_hover_bottom {
     @apply flex justify-center p-3 ml-2 rounded-l-xl bg-[#393C49]
     relative after:absolute after:w-5  after:h-5
     after:right-0 after:-top-5 after:bg-[#1F1D2B] after:rounded-full
-    after:shadow-[10px_10px_0_rgb(57,60,73)]
+    after:shadow-[10px_10px_0_rgb(57,60,73)];
   }
 
-  .active_curve{
+  .active_curve {
     @apply flex justify-center p-3 ml-2 rounded-l-xl bg-[#393C49] relative
     before:absolute before:w-5  before:h-5 before:right-0 before:-bottom-5
     before:bg-[#1F1D2B] before:rounded-full
     before:shadow-[10px_-10px_0_rgb(57,60,73)] after:absolute after:w-5
     after:h-5 after:right-0 after:-top-5 after:bg-[#1F1D2B] after:rounded-full
-    after:shadow-[10px_10px_0_rgb(57,60,73)]
+    after:shadow-[10px_10px_0_rgb(57,60,73)];
   }
 
-  .without_curve{
+  .without_curve {
     @apply fill-current text-[#EA7C69] flex justify-center p-3 ml-2
-    hover:curve_hover hover:text-white 
+    hover:curve_hover hover:text-white;
   }
 
-  .active_tab{
+  .active_tab {
     @apply fill-current text-white p-2 rounded-xl bg-[#EA7C69]
-    group-hover:shadow-[0_4px_11px_0_rgba(234,124,105,0.32)]
+    group-hover:shadow-[0_4px_11px_0_rgba(234,124,105,0.32)];
   }
 
-  .tab{
+  .tab {
     @apply p-2 group-hover:bg-[#EA7C69] group-hover:rounded-xl
-    group-hover:shadow-[0_4px_11px_0_rgba(234,124,105,0.32)]
+    group-hover:shadow-[0_4px_11px_0_rgba(234,124,105,0.32)];
   }
 
-
-  .dish__menu-item{
+  .dish__menu-item {
     @apply min-h-8 text-lg inline-block relative after:absolute after:top-[100%]
     after:left-[50%] after:-translate-x-[50%] after:w-0 after:h-[2px]
-    after:bg-[#EA7C69] after:duration-200 hover:after:w-[100%]
+    after:bg-[#EA7C69] after:duration-200 hover:after:w-[100%];
   }
-  .active-dish{
+  .active-dish {
     @apply text-[#EA7C69] relative after:absolute 
     after:absolute after:top-[100%]
     after:left-[50%] after:-translate-x-[50%] after:h-[2px]
-    after:bg-[#EA7C69] after:w-[100%]
+    after:bg-[#EA7C69] after:w-[100%];
   }
 }
-

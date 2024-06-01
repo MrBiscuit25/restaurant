@@ -8,6 +8,7 @@ import Soup from "./pages/Soup";
 import Grill from "./pages/Grill";
 import Appetizer from "./pages/Appetizer";
 import Dessert from "./pages/Dessert";
+import Dashboard from "./pages/Dashboard";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
             <Route path="appetizer" element={<Appetizer/>}/>
             <Route path="dessert" element={<Dessert/>}/>
           </Route>
+          <Route path="dashboard" element={<Dashboard/>}/>
         </Route>
       </Routes>
     </div>
