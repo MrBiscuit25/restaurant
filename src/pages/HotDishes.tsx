@@ -1,14 +1,20 @@
+import { useState } from "react";
 import DishCard from "../components/DishCard";
-import dishes from '../data/dishes.json';
+import dishes from "../data/dishes.json";
 const HotDishes = () => {
   return (
     <div className="grid grid-cols-auto-fill-150 gap-x-6 gap-y-14">
-      {dishes.map(dish => (
-      <DishCard key={dish.id} name={dish.name} image={dish.image} price={dish.price}
-          availiable={dish.availiable}/> 
+      {dishes.map((dish) => (
+        <DishCard
+          key={dish.id}
+          name={dish.name}
+          image={dish.image}
+          price={dish.price}
+          availiable={dish.availiable}
+        />
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default HotDishes
+export default HotDishes;

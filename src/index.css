@@ -211,4 +211,7 @@
     after:left-[50%] after:-translate-x-[50%] after:h-[2px]
     after:bg-[#EA7C69] after:w-[100%];
   }
+  .active-button {
+    @apply bg-[#EA7C69] text-[#ffffff];
+  }
 }
