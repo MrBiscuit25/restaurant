@@ -1,0 +1,9 @@
+[
+  {
+    "id": "1",
+    "name": "Grilled Fish",
+    "image": "/images/grill/cropped_image.png",
+    "price": "2.29",
+    "availiable": "20"
+  }
+]

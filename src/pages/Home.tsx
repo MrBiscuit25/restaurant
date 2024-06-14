@@ -3,6 +3,7 @@ import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import OrderItem from "../components/OrderItem";
 import orders from "../data/orders.json";
+// import { useSelector, useDispatch } from "react-redux";
 
 const Home = () => {
   const [searchIsActive, setSearchIsActive] = useState(false);
@@ -11,6 +12,9 @@ const Home = () => {
     { id: 1, title: "To Go", active: false },
     { id: 2, title: "Delivery", active: false },
   ]);
+
+  const [query, setQuery] = useState("");
+
   return (
     <div className="grid grid-cols-3 gap-x-[20px] pl-[20px] ">
       <div className="col-span-2">
@@ -37,9 +41,13 @@ const Home = () => {
                 onBlur={() => {
                   setSearchIsActive(false);
                 }}
+                onChange={(e) => {
+                  setQuery(e.target.value);
+                }}
+                value={query}
                 className="bg-transparent outline-none"
                 placeholder="Search for food,coffe,etc..."
-                type="text"
+                type="search"
               />
             </div>
           </div>
@@ -128,7 +136,7 @@ const Home = () => {
             Choose Dishes
           </div>
         </div>
-        <Outlet />
+        <Outlet context={query} />
       </div>
       <div className="flex flex-col bg-[#1f1f2b] p-6 gap-y-6 self-start rounded-b-2xl">
         <div>Orders #34562</div>

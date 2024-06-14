@@ -1,10 +1,14 @@
-import { useState } from "react";
 import DishCard from "../components/DishCard";
-import dishes from "../data/dishes.json";
+import allDishes from "../data/allDishes.json";
+import { useOutletContext } from "react-router-dom";
 const HotDishes = () => {
+  const context: string = useOutletContext();
+  const filteredDishes = allDishes.hot_dishes.filter((dish) =>
+    dish.name.toLowerCase().includes(context.toLowerCase()),
+  );
   return (
     <div className="grid grid-cols-auto-fill-150 gap-x-6 gap-y-14">
-      {dishes.map((dish) => (
+      {filteredDishes?.map((dish) => (
         <DishCard
           key={dish.id}
           name={dish.name}
