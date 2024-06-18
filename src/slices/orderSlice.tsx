@@ -30,7 +30,10 @@ export const orderSlice = createSlice({
         (item) => item.id === id && item.category == category,
       );
       if (incrementedDish) {
-        incrementedDish.count += 1;
+        if (incrementedDish.availiable - 1 > 0) {
+          incrementedDish.availiable -= 1;
+          incrementedDish.count += 1;
+        }
       }
     },
     decrementCount: (state, action, value) => {
@@ -39,7 +42,7 @@ export const orderSlice = createSlice({
         (item) => item.id === id && item.category == category,
       );
       if (decrementDish) {
-        decrementDish.count -= 1;
+        if (decrementDish.count > 1) decrementDish.count -= 1;
       }
     },
     deleteDish: (state, action) => {
