@@ -2,8 +2,7 @@ import Search from "../assets/search.svg?react";
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import OrderItem from "../components/OrderItem";
-import orders from "../data/orders.json";
-// import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 const Home = () => {
   const [searchIsActive, setSearchIsActive] = useState(false);
@@ -14,7 +13,9 @@ const Home = () => {
   ]);
 
   const [query, setQuery] = useState("");
+  const order = useSelector((state) => state.order);
 
+  let subtotal = order.reduce((acc, cur) => acc + cur.price * cur.count, 0);
   return (
     <div className="grid grid-cols-3 gap-x-[20px] pl-[20px] ">
       <div className="col-span-2">
@@ -161,18 +162,21 @@ const Home = () => {
             </li>
           ))}
         </ul>
-        <div className="flex gap-x-10 border-b-[1px] border-[#abbbc2] pb-5 mb-[146px]">
+        <div className="flex gap-x-10 border-b-[1px] border-[#abbbc2] pb-5 mb-[45px]">
           <div>Item</div>
           <div className="ml-auto">Qty</div>
           <div>Price</div>
         </div>
-        <div className="flex flex-col gap-y-6">
-          {orders.map((order) => (
+        <div className="gutter flex flex-col gap-y-6 max-h-[488px]  overflow-y-auto scrollbar-thin scrollbar-webkit">
+          {order.map((order) => (
             <OrderItem
+              id={order.id}
+              count={order.count}
               key={order.id}
               price={order.price}
               name={order.name}
               image={order.image}
+              category={order.category}
             />
           ))}
         </div>
@@ -182,7 +186,7 @@ const Home = () => {
         </div>
         <div className="flex justify-between">
           <div className="text-sm text-[#abbbc2]">Sub total</div>
-          <div className="i">$21,03</div>
+          <div className="i">$ {subtotal.toFixed(2)}</div>
         </div>
         <button className="py-3 border-[1px] rounded-xl hover:text-[#fff] hover:border-transparent hover:bg-[#EA7C69] text-[#EA7C69] border-[#EA7C69]">
           Continue to Payment

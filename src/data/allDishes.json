@@ -7,7 +7,6 @@
       "price": "2.29",
       "availiable": "20"
     },
-
     {
       "id": "2",
       "name": "Salted Pasta with mushroom sauce",
@@ -15,7 +14,6 @@
       "price": "2.69",
       "availiable": "11"
     },
-
     {
       "id": "3",
       "name": "Beef dumpling in hot and sour soup",
@@ -42,14 +40,14 @@
       "name": "Spicy instant noodle with special omelette",
       "image": "/images/6.svg",
       "price": "2.69",
-      "availiable": "17"
+      "availiable": 16
     },
     {
       "id": "7",
       "name": "Healthy noodle with spinach leaf",
       "image": "/images/7.svg",
       "price": "2.69",
-      "availiable": "11"
+      "availiable": 8
     },
     {
       "id": "8",
