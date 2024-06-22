@@ -168,15 +168,15 @@ const Home = () => {
           <div>Price</div>
         </div>
         <div className="gutter flex flex-col gap-y-6 max-h-[488px]  overflow-y-auto scrollbar-thin scrollbar-webkit">
-          {order.map((order) => (
+          {order.map((item) => (
             <OrderItem
-              id={order.id}
-              count={order.count}
-              key={order.id}
-              price={order.price}
-              name={order.name}
-              image={order.image}
-              category={order.category}
+              id={item.id}
+              count={item.count}
+              key={item.id}
+              price={item.price}
+              name={item.name}
+              image={item.image}
+              category={item.category}
             />
           ))}
         </div>

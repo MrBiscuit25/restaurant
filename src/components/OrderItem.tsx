@@ -1,9 +1,10 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import TrashBin from "../assets/TrashBin.svg?react";
 import { decrementCount, incrementCount } from "../slices/orderSlice";
 import { deleteDish } from "../slices/orderSlice";
 
 const OrderItem = ({ price, name, image, count, category, id }) => {
+  const data = useSelector((state) => state.order);
   const dispatch = useDispatch();
   return (
     <div className="flex gap-x-4 pr-3">
@@ -52,7 +53,10 @@ const OrderItem = ({ price, name, image, count, category, id }) => {
         </div>
         <button
           className="p-3 text-[#ea7c69] self-end hover:text-white border-[1px] border-[#ea7c69]  hover:bg-[#ea7c69]  rounded"
-          onClick={() => dispatch(deleteDish({ id }))}
+          onClick={() => {
+            dispatch(deleteDish({ id }));
+            console.log(data);
+          }}
         >
           <TrashBin />
         </button>

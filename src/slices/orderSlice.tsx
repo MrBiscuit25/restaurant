@@ -9,18 +9,22 @@ export const orderSlice = createSlice({
     addDish: (state, action) => {
       const { category, id } = action.payload;
       const dish = allDishes[category]?.find((dish) => dish.id == id);
-      if (!dish.count) {
+      const currentDish = state.find((item) => item.id === id);
+      // console.log(dish?.count);
+      // console.log(currentDish);
+      if (!dish.count || !currentDish) {
+        const newDish = {
+          ...dish,
+          count: 1,
+          category: dish.category,
+          availiable: dish.availiable - 1,
+        };
         dish.count = 1;
-        dish.category = category;
-        state.push(dish);
+        state.push(newDish);
       } else {
-        const currentDish = state.find((item) => item.id === id);
-        if (currentDish) {
-          if (currentDish.count < currentDish.availiable) {
-            currentDish.count += 1;
-          } else {
-            return;
-          }
+        if (currentDish && currentDish.availiable >= 1) {
+          currentDish.count += 1;
+          currentDish.availiable -= 1;
         }
       }
     },
@@ -30,7 +34,7 @@ export const orderSlice = createSlice({
         (item) => item.id === id && item.category == category,
       );
       if (incrementedDish) {
-        if (incrementedDish.availiable - 1 > 0) {
+        if (incrementedDish.availiable > 0) {
           incrementedDish.availiable -= 1;
           incrementedDish.count += 1;
         }
@@ -42,7 +46,10 @@ export const orderSlice = createSlice({
         (item) => item.id === id && item.category == category,
       );
       if (decrementDish) {
-        if (decrementDish.count > 1) decrementDish.count -= 1;
+        if (decrementDish.count > 1) {
+          decrementDish.availiable += 1;
+          decrementDish.count -= 1;
+        }
       }
     },
     deleteDish: (state, action) => {
@@ -52,7 +59,12 @@ export const orderSlice = createSlice({
   },
 });
 
-export const { addDish, incrementCount, decrementCount, deleteDish } =
-  orderSlice.actions;
+export const {
+  addDish,
+  incrementCount,
+  decrementCount,
+  deleteDish,
+  otherDelete,
+} = orderSlice.actions;
 
 export default orderSlice.reducer;

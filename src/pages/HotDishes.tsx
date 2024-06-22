@@ -1,6 +1,6 @@
 import DishCard from "../components/DishCard";
 import { useOutletContext } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addDish } from "../slices/orderSlice";
 import allDishes from "../data/allDishes.json";
 import { useEffect, useState } from "react";
@@ -14,7 +14,7 @@ const HotDishes = () => {
   //     .catch((err) => console.error(err));
   // }, []);
 
-  const [currentDishId, setCurrentDishId] = useState(null);
+  // const [currentDishId, setCurrentDishId] = useState(null);
 
   // const currentDish = data ? data[currentDishId - 1] : "";
 
@@ -42,6 +42,7 @@ const HotDishes = () => {
   // }
   // };
 
+  // const data = useSelector((state) => state.order);
   const context: string = useOutletContext();
   const filteredDishes = allDishes["hot_dishes"]?.filter((dish) =>
     dish.name?.toLowerCase().includes(context.toLowerCase()),
