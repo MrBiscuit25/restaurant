@@ -26,6 +26,7 @@ const OrderItem = ({ price, name, image, count, category, id }) => {
               className="text-xl h-[100%] hover:text-green-700 hover:bg-green-400 rounded-l-lg"
               onClick={() => {
                 dispatch(incrementCount({ category, id }));
+                console.log(category);
               }}
             >
               +

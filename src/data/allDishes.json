@@ -5,63 +5,72 @@
       "name": "Spicy seasonde seafood noodles",
       "image": "/images/1.svg",
       "price": "2.29",
-      "availiable": "20"
+      "availiable": "20",
+      "category": "hot_dishes"
     },
     {
       "id": "2",
       "name": "Salted Pasta with mushroom sauce",
       "image": "/images/2.svg",
       "price": "2.69",
-      "availiable": "11"
+      "availiable": "11",
+      "category": "hot_dishes"
     },
     {
       "id": "3",
       "name": "Beef dumpling in hot and sour soup",
       "image": "/images/3.svg",
       "price": "2.99",
-      "availiable": "16"
+      "availiable": "16",
+      "category": "hot_dishes"
     },
     {
       "id": "4",
       "name": "Healthy noodle with spinach leaf",
       "image": "/images/4.svg",
       "price": "3.29",
-      "availiable": "22"
+      "availiable": "22",
+      "category": "hot_dishes"
     },
     {
       "id": "5",
       "name": "Hot spicy fried rice with omelet",
       "image": "/images/5.svg",
       "price": "3.49",
-      "availiable": "13"
+      "availiable": "13",
+      "category": "hot_dishes"
     },
     {
       "id": "6",
       "name": "Spicy instant noodle with special omelette",
       "image": "/images/6.svg",
       "price": "2.69",
-      "availiable": 16
+      "availiable": 16,
+      "category": "hot_dishes"
     },
     {
       "id": "7",
       "name": "Healthy noodle with spinach leaf",
       "image": "/images/7.svg",
       "price": "2.69",
-      "availiable": 8
+      "availiable": 8,
+      "category": "hot_dishes"
     },
     {
       "id": "8",
       "name": "Hot spicy fried rice with omelet",
       "image": "/images/8.svg",
       "price": "2.69",
-      "availiable": "11"
+      "availiable": "11",
+      "category": "hot_dishes"
     },
     {
       "id": "9",
       "name": "Spicy instant noodle with special omelette",
       "image": "/images/9.svg",
       "price": "2.69",
-      "availiable": "11"
+      "availiable": "11",
+      "category": "hot_dishes"
     }
   ],
   "cold_dishes": [
@@ -70,7 +79,8 @@
       "name": "Silked Tofu",
       "image": "/images/cold_dishes/1.png",
       "price": "3.05",
-      "availiable": "13"
+      "availiable": "13",
+      "category": "cold_dishes"
     }
   ],
   "soup": [
@@ -79,7 +89,8 @@
       "name": "Kongguksu",
       "image": "/images/soup/1.png",
       "price": "13.7",
-      "availiable": "7"
+      "availiable": "7",
+      "category": "soup"
     }
   ],
   "grill": [
@@ -88,7 +99,8 @@
       "name": "Grilled Fish",
       "image": "/images/grill/cropped_image.png",
       "price": "2.29",
-      "availiable": "20"
+      "availiable": "20",
+      "category": "grill"
     }
   ],
   "appetizer": [
@@ -97,15 +109,27 @@
       "name": "Cucumber Salad",
       "image": "/images/appetizer/1.png",
       "price": "2.05",
-      "availiable": "10"
+      "availiable": "10",
+      "category": "appetizer"
     },
     {
       "id": "2",
       "name": "Seaweed Salad",
       "image": "/images/appetizer/2.png",
       "price": "1.05",
-      "availiable": "30"
+      "availiable": "30",
+      "category": "appetizer"
     }
   ],
-  "dessert": []
+  "dessert": [
+    {
+      "id": "1",
+      "name": "Strawberry Mochi",
+      "image": "/images/dessert/1.png",
+      "price": "10.92",
+      "availiable": "13",
+      "category": "dessert"
+    }
+  ]
 }
+

@@ -9,9 +9,9 @@ export const orderSlice = createSlice({
     addDish: (state, action) => {
       const { category, id } = action.payload;
       const dish = allDishes[category]?.find((dish) => dish.id == id);
-      const currentDish = state.find((item) => item.id === id);
-      // console.log(dish?.count);
-      // console.log(currentDish);
+      const currentDish = state.find(
+        (item) => item.id === id && item.category == category,
+      );
       if (!dish.count || !currentDish) {
         const newDish = {
           ...dish,

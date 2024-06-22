@@ -172,7 +172,7 @@ const Home = () => {
             <OrderItem
               id={item.id}
               count={item.count}
-              key={item.id}
+              key={`${item.name}-${item.price}`}
               price={item.price}
               name={item.name}
               image={item.image}
