@@ -218,4 +218,10 @@
   .active-button {
     @apply bg-[#EA7C69] text-[#ffffff];
   }
+  .orders_side-open {
+    @apply grid grid-cols-3 gap-x-[20px] pl-[20px];
+  }
+  .orders_side-closed {
+    @apply grid grid-cols-2 gap-x-[20px] p-[20px];
+  }
 }
