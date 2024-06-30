@@ -39,7 +39,7 @@ const Home = () => {
   const [query, setQuery] = useState("");
   const order = useSelector((state) => state.order);
 
-  const [orderSidebar, setOrderSidebar] = useState("closed");
+  const [orderSidebar, setOrderSidebar] = useState("open");
   const currentTime = new Date();
   const day_week = weekday[currentTime.getDay()];
   const month = months[currentTime.getMonth()];
