@@ -4,9 +4,9 @@ const Layout = () => {
   return (
     <>
       <Nav />
-    <div className="bg-[#393C49] text-white grow">
-      <Outlet />
-    </div>
+      <div className="bg-[#393C49] text-white grow">
+        <Outlet />
+      </div>
     </>
   );
 };

@@ -13,26 +13,22 @@ const Nav = () => {
       <nav className="bg-[#1F1D2B] rounded-r-2xl sticky top-0">
         <ul className="flex flex-col gap-y-5  min-h-[100vh] [&>*:last-child]:mt-auto [&>*:last-child]:mb-auto">
           <li className="group">
-            <NavLink to='/home' className='fill-current text-[#EA7C69] flex justify-center p-3 ml-2'>
-              <Store className='p-2 bg-[rgba(235,150,106,0.26)] rounded-xl '/>
+            <NavLink
+              to="/home"
+              className="fill-current text-[#EA7C69] flex justify-center p-3 ml-2"
+            >
+              <Store className="p-2 bg-[rgba(235,150,106,0.26)] rounded-xl " />
             </NavLink>
           </li>
           <li className="group">
             <NavLink
               to="/home"
               className={({ isActive }) =>
-                isActive
-                  ? "active_curve"
-                  : "without_curve"
+                isActive ? "active_curve" : "without_curve"
               }
             >
               {({ isActive }) => (
-                <Home  className={
-                  isActive
-                    ? "active_tab"
-                    : "tab"
-                }
-                />
+                <Home className={isActive ? "active_tab" : "tab"} />
               )}
             </NavLink>
           </li>
@@ -40,18 +36,11 @@ const Nav = () => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                isActive
-                  ? "active_curve"
-                  : "without_curve"
+                isActive ? "active_curve" : "without_curve"
               }
             >
               {({ isActive }) => (
-                <Discounts  className={
-                  isActive
-                    ? "active_tab"
-                    : "tab"
-                }
-                />
+                <Discounts className={isActive ? "active_tab" : "tab"} />
               )}
             </NavLink>
           </li>
@@ -59,96 +48,64 @@ const Nav = () => {
             <NavLink
               to="/dashboard"
               className={({ isActive }) =>
-                isActive
-                  ? "active_curve"
-                  : "without_curve"
+                isActive ? "active_curve" : "without_curve"
               }
             >
               {({ isActive }) => (
-                <Statistics  className={
-                  isActive
-                    ? "active_tab"
-                    : "tab"
-                }
-                />
+                <Statistics className={isActive ? "active_tab" : "tab"} />
               )}
             </NavLink>
           </li>
           <li className="group">
             <NavLink
-              to="/some"
+              to="/messages"
               className={({ isActive }) =>
-                isActive
-                  ? "active_curve"
-                  : "without_curve"
+                isActive ? "active_curve" : "without_curve"
               }
             >
               {({ isActive }) => (
-                <Messages  className={
-                  isActive
-                    ? "active_tab"
-                    : "tab"
-                }
-                />
+                <Messages className={isActive ? "active_tab" : "tab"} />
               )}
             </NavLink>
           </li>
           <li className="group">
             <NavLink
-              to="/some"
+              to="/notifications"
               className={({ isActive }) =>
-                isActive
-                  ? "active_curve"
-                  : "without_curve"
+                isActive ? "active_curve" : "without_curve"
               }
             >
               {({ isActive }) => (
-              <Notifications  className={
-                    isActive
-                      ? "active_tab"
-                      : "tab"
-                  }
-              />
-)}
+                <Notifications className={isActive ? "active_tab" : "tab"} />
+              )}
             </NavLink>
           </li>
           <li className="group">
             <NavLink
-              to="/some"
+              to="/settings"
               className={({ isActive }) =>
-                isActive
-                  ? "active_curve"
-                  : "without_curve"
+                isActive ? "active_curve" : "without_curve"
               }
             >
               {({ isActive }) => (
-              <Settings  className={
-                    isActive
-                      ? "active_tab"
-                      : "tab"
-                  }
-              />
-)}
+                <Settings className={isActive ? "active_tab" : "tab"} />
+              )}
             </NavLink>
           </li>
           <li className="group">
-            <NavLink
-              to="/some"
-              className={({ isActive }) =>
-                isActive
-                  ? "active_curve"
-                  : "without_curve"
-              }
-            >
-              {({ isActive }) => (
-              <LogOut  className={
-                    isActive
-                      ? "active_tab"
-                      : "tab"
-                  }
-              />
-)}
-            </NavLink>
+            {/* <NavLink */}
+            {/*   to="/some" */}
+            {/*   className={({ isActive }) => */}
+            {/*     isActive ? "active_curve" : "without_curve" */}
+            {/*   } */}
+            {/* > */}
+            {/*   {({ isActive }) => ( */}
+            {/*     <LogOut className={isActive ? "active_tab" : "tab"} /> */}
+            {/*   )} */}
+            {/* </NavLink> */}
+            <button className="without_curve">
+              <LogOut className="tab" />
+            </button>
           </li>
         </ul>
       </nav>

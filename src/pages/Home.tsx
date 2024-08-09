@@ -4,6 +4,7 @@ import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import OrderItem from "../components/OrderItem";
 import { useSelector, useDispatch } from "react-redux";
+import Payment from "../components/Payment";
 
 const Home = () => {
   const [searchIsActive, setSearchIsActive] = useState(false);
@@ -46,13 +47,21 @@ const Home = () => {
   const day = currentTime.getDate();
 
   let subtotal = order.reduce((acc, cur) => acc + cur.price * cur.count, 0);
+
+  const [continueOrder, setContinueOrder] = useState(false);
+
+  const cancelOrderConfirmation = () => {
+    setContinueOrder(false);
+  };
   return (
     <div
       className={
-        orderSidebar == "open" ? "orders_side-open" : "orders_side-closed"
+        orderSidebar == "open"
+          ? `${continueOrder ? "grid grid-cols-2 gap-x-[20px] pl-[20px]" : "orders_side-open"}`
+          : `${continueOrder ? "grid grid-cols-1 gap-x-[20px] p-[20px]" : "orders_side-closed"}`
       }
     >
-      <div className="col-span-2">
+      <div className={`${continueOrder ? "col-span-1" : "col-span-2"}`}>
         <div className="row mb-5">
           <div className="flex mb-4 mt-8">
             <div className="leading-[140%]">
@@ -191,60 +200,70 @@ const Home = () => {
       {orderSidebar == "closed" ? (
         ""
       ) : (
-        <div className="flex flex-col bg-[#1f1f2b] p-6 gap-y-6 self-start rounded-b-2xl">
-          <div className="flex justify-between">
-            <div> Orders #34562</div>
+        <div className={`${continueOrder ? "flex" : ""}`}>
+          <div className="flex flex-col bg-[#1f1f2b] p-6 gap-y-6 self-stretch rounded-l-2xl flex-1">
+            <div className="flex justify-between">
+              <div> Orders #34562</div>
+            </div>
+            <ul className="flex gap-x-2 text-sm text-[#EA7C69]">
+              {OrderTypeButtons.map((OrderButton) => (
+                <li key={OrderButton.id}>
+                  <button
+                    onClick={(e) => {
+                      let newArr = [...OrderTypeButtons];
+                      newArr.forEach((ord) => (ord.active = false));
+                      newArr.splice(OrderButton.id, 1, {
+                        id: OrderButton.id,
+                        title: OrderButton.title,
+                        active: !OrderButton.active,
+                      });
+                      setOrderTypeButtons(newArr);
+                    }}
+                    className={`px-2 py-1 rounded border-[1px] border-[#393c49] hover:bg-[#EA7C69] hover:text-white ${OrderButton.active ? "active-button" : ""}`}
+                  >
+                    {OrderButton.title}
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <div className="flex gap-x-10 border-b-[1px] border-[#abbbc2] pb-5 mb-[45px]">
+              <div>Item</div>
+              <div className="ml-auto">Qty</div>
+              <div>Price</div>
+            </div>
+            <div className="gutter flex flex-col gap-y-6 max-h-[488px]  overflow-y-auto scrollbar-thin scrollbar-webkit">
+              {order.map((item) => (
+                <OrderItem
+                  id={item.id}
+                  count={item.count}
+                  key={`${item.name}-${item.price}`}
+                  price={item.price}
+                  name={item.name}
+                  image={item.image}
+                  category={item.category}
+                />
+              ))}
+            </div>
+            <div className="flex justify-between mt-auto">
+              <div className="text-sm text-[#abbbc2]">Discount</div>
+              <div className="i">$0</div>
+            </div>
+            <div className="flex justify-between">
+              <div className="text-sm text-[#abbbc2]">Sub total</div>
+              <div className="i">$ {subtotal.toFixed(2)}</div>
+            </div>
+            <button
+              className="py-3 border-[1px] rounded-xl hover:text-[#fff] hover:border-transparent hover:bg-[#EA7C69] text-[#EA7C69] border-[#EA7C69]"
+              onClick={() => setContinueOrder(!continueOrder)}
+            >
+              Continue to Payment
+            </button>
           </div>
-          <ul className="flex gap-x-2 text-sm text-[#EA7C69]">
-            {OrderTypeButtons.map((OrderButton) => (
-              <li key={OrderButton.id}>
-                <button
-                  onClick={(e) => {
-                    let newArr = [...OrderTypeButtons];
-                    newArr.forEach((ord) => (ord.active = false));
-                    newArr.splice(OrderButton.id, 1, {
-                      id: OrderButton.id,
-                      title: OrderButton.title,
-                      active: !OrderButton.active,
-                    });
-                    setOrderTypeButtons(newArr);
-                  }}
-                  className={`px-2 py-1 rounded border-[1px] border-[#393c49] hover:bg-[#EA7C69] hover:text-white ${OrderButton.active ? "active-button" : ""}`}
-                >
-                  {OrderButton.title}
-                </button>
-              </li>
-            ))}
-          </ul>
-          <div className="flex gap-x-10 border-b-[1px] border-[#abbbc2] pb-5 mb-[45px]">
-            <div>Item</div>
-            <div className="ml-auto">Qty</div>
-            <div>Price</div>
-          </div>
-          <div className="gutter flex flex-col gap-y-6 max-h-[488px]  overflow-y-auto scrollbar-thin scrollbar-webkit">
-            {order.map((item) => (
-              <OrderItem
-                id={item.id}
-                count={item.count}
-                key={`${item.name}-${item.price}`}
-                price={item.price}
-                name={item.name}
-                image={item.image}
-                category={item.category}
-              />
-            ))}
-          </div>
-          <div className="flex justify-between">
-            <div className="text-sm text-[#abbbc2]">Discount</div>
-            <div className="i">$0</div>
-          </div>
-          <div className="flex justify-between">
-            <div className="text-sm text-[#abbbc2]">Sub total</div>
-            <div className="i">$ {subtotal.toFixed(2)}</div>
-          </div>
-          <button className="py-3 border-[1px] rounded-xl hover:text-[#fff] hover:border-transparent hover:bg-[#EA7C69] text-[#EA7C69] border-[#EA7C69]">
-            Continue to Payment
-          </button>
+          {continueOrder ? (
+            <Payment cancelConfirmation={cancelOrderConfirmation} />
+          ) : (
+            ""
+          )}
         </div>
       )}
     </div>

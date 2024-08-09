@@ -9,6 +9,7 @@ import Grill from "./pages/Grill";
 import Appetizer from "./pages/Appetizer";
 import Dessert from "./pages/Dessert";
 import Dashboard from "./pages/Dashboard";
+import Messages from "./pages/Messages";
 
 const App = () => {
   return (
@@ -16,16 +17,19 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Public />} />
-          <Route path="home"  element={<Home/>}>
-            <Route index element={<HotDishes/>}/>
-            <Route path="hot_dishes" element={<HotDishes/>}/>
-            <Route path="cold_dishes" element={<ColdDishes/>}/>
-            <Route path="soup" element={<Soup/>}/>
-            <Route path="grill" element={<Grill/>}/>
-            <Route path="appetizer" element={<Appetizer/>}/>
-            <Route path="dessert" element={<Dessert/>}/>
+          <Route path="home" element={<Home />}>
+            <Route index element={<HotDishes />} />
+            <Route path="hot_dishes" element={<HotDishes />} />
+            <Route path="cold_dishes" element={<ColdDishes />} />
+            <Route path="soup" element={<Soup />} />
+            <Route path="grill" element={<Grill />} />
+            <Route path="appetizer" element={<Appetizer />} />
+            <Route path="dessert" element={<Dessert />} />
           </Route>
-          <Route path="dashboard" element={<Dashboard/>}/>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="messages" element={<Messages />} />
+          <Route path="notifications" element={<>notifications</>} />
+          <Route path="settings" element={<>settings</>} />
         </Route>
       </Routes>
     </div>
