@@ -3,27 +3,19 @@ import Column from "./Column";
 import BurnBurrel from "./BurnBurrel";
 const Board = () => {
   const DEFAULT_CARDS = [
-    { title: "Look into render bug in dushboard", id: "1", column: "backlog" },
-    { title: "SOX compliance checklist", id: "2", column: "backlog" },
-    { title: "[SPIKE] Migrate to Azure", id: "3", column: "backlog" },
-    { title: "Document Notification service", id: "4", column: "backlog" },
+    { title: "Check stock", id: "1", column: "backlog" },
+    { title: "Clean the dishes", id: "2", column: "backlog" },
+    { title: "Chicken fried rice", id: "3", column: "backlog" },
+    { title: "Canton noodles with eggs", id: "4", column: "backlog" },
 
     {
-      title: "Research DB options for a new microservice",
+      title: "Make the fried rice chiken noodles soup",
       id: "5",
-      column: "todo",
+      column: "dishes",
     },
-    { title: "Postmortem for outage", id: "6", column: "todo" },
-    { title: "Sync with product on Q3 roadmap", id: "7", column: "todo" },
-
+    { title: "Chop the vegetables for noodles soup", id: "9", column: "doing" },
     {
-      title: "Refactor context providers to use Zustand",
-      id: "8",
-      column: "doing",
-    },
-    { title: "Add logging to daily CRON", id: "9", column: "doing" },
-    {
-      title: "Set up DD dashboard for Lambda listener",
+      title: "Boil the beef stock",
       id: "10",
       column: "doing",
     },
